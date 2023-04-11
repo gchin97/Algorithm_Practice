@@ -61,7 +61,32 @@
 # 조합: 서로다른 N개에서 r개를 선택하는 것
 # {A,B,C} 에서 순서를 고려하지 않고 두개를 뽑는 경우: AB, AC, BC
 
-from itertools import combinations
-data = ['A', 'B', 'C']
-result = list(combinations(data, 2))
-print(result)
+# from itertools import combinations
+# data = ['A', 'B', 'C']
+# result = list(combinations(data, 2))
+# print(result)
+
+# 중복순열을 구할때는 combinations 가 아닌 product 나 combinations_with_replacement
+
+# n = 1250
+# count = 0
+# array = [500, 100, 50, 10]
+# for coin in array:
+#     count = count + n // coin  # 1260원이 됨
+#     # 처음으로는
+#     n = n % coin  # 260
+# print(count)
+
+n, k = map(int, input().split())
+count = 0
+while True:
+    target = (n//k)*k
+    count = count + (n-target)
+    n = target
+    if n < k:
+        break
+    count = count + 1
+    n = n//k
+
+count = count + (n-1)
+print(count)
