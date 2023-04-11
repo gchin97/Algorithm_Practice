@@ -77,16 +77,30 @@
 #     n = n % coin  # 260
 # print(count)
 
-n, k = map(int, input().split())
-count = 0
-while True:
-    target = (n//k)*k
-    count = count + (n-target)
-    n = target
-    if n < k:
-        break
-    count = count + 1
-    n = n//k
+  # 그리디 문제 2
+# n, k = map(int, input().split())
+# count = 0
+# while True:
+#     target = (n//k)*k
+#     count = count + (n-target)
+#     n = target
+#     if n < k:
+#         break
+#     count = count + 1
+#     n = n//k
 
-count = count + (n-1)
-print(count)
+# count = count + (n-1)
+# print(count)
+
+# 문자열을 더해서 가장 큰 정수를 만드는 프로그램
+
+data = input()
+# 각 숫자를 문자열로 바꿔주는 것
+result = int(data[0])
+for i in range(1, len(data)):
+    num = int(data[i])
+    if num <= 1 or result <= 1:
+        result = result + num
+    else:
+        result = result * num
+print(result)
