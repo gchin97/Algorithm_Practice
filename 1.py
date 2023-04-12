@@ -148,18 +148,58 @@
 #         count = 0 현재 그룹에 포함된 모험가의 수 초기화
 # print(result) 총 그룹의 수 출력
 
-n = int(input())  # 5
-plans = input().split()  # R R R U D
-x, y = 1, 1
+# n = int(input())  # 5
+# plans = input().split()  # R R R U D
+# x, y = 1, 1
 
-dx = [0, 0, 1, -1]
-dy = [-1, 1, 0, 0,]
-move_types = ['L', 'R', 'U', 'D']
-for plan in plans:
-    for i in range(len(move_types)):
-        if plan == move_types[i]:
-            nx = x + dx[i]
-            ny = y + dy[i]
+# dx = [0, 0, 1, -1]
+# dy = [-1, 1, 0, 0,]
+# move_types = ['L', 'R', 'U', 'D']
+# for plan in plans:
+#     for i in range(len(move_types)):
+#         if plan == move_types[i]:
+#             nx = x + dx[i]
+#             ny = y + dy[i]
+#     if nx < 1 or ny <1 or nx >x or ny >y
+#     x, y = nx, ny
+# print(x, y)
 
-    x, y = nx, ny
-print(x, y)
+
+# h = int(input())
+# count = 0
+# for i in range(h+1):
+#     for j in range(60):
+#         for k in range(60):
+#             if '3' in str(i)+str(j)+str(k):
+#                 count = count+1
+# print(count)
+
+#시뮬레이션 완전탐색 구현 유형
+input_data= input() #a1 -> 2
+row = int(input_data[1])
+column = int(ord(input_data[0]))- int(ord('a')) + 1 
+
+steps = [(-2,-1),(-1,-2),(1,-2),(2,-1),(2,1),(1,2),(-1,2),(-2,1)]
+result = 0
+for step in steps:
+    next_row = row + step[0]
+    next_column = column + step[1]
+    if next_row >=1 or next_row <=8 or next_column >=1 or next_column <=8:
+        result = result + 1
+print(result)
+
+#6. 그리디- 시뮬레이션  
+data = input()
+result = []
+value = 0
+
+for x in data:
+    if x.isalpha():
+        result.append(x)
+    else:
+        value = value + int(x)
+result.sort()
+if value != 0:
+    result.append(str(value))
+
+print(''.join(result))
