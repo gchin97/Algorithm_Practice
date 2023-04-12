@@ -77,7 +77,7 @@
 #     n = n % coin  # 260
 # print(count)
 
-  # 그리디 문제 2
+# 그리디 문제 2
 # n, k = map(int, input().split())
 # count = 0
 # while True:
@@ -94,13 +94,56 @@
 
 # 문자열을 더해서 가장 큰 정수를 만드는 프로그램
 
-data = input()
-# 각 숫자를 문자열로 바꿔주는 것
-result = int(data[0])
-for i in range(1, len(data)):
-    num = int(data[i])
-    if num <= 1 or result <= 1:
-        result = result + num
-    else:
-        result = result * num
-print(result)
+# data = input()
+# # 각 숫자를 문자열로 바꿔주는 것
+# result = int(data[0])
+# for i in range(1, len(data)):
+#     num = int(data[i])
+#     if num <= 1 or result <= 1:
+#         result = result + num
+#     else:
+#         result = result * num
+# print(result)
+
+# data = input()
+# # 각 숫자를 문자열로 바꿔주는 것
+# result = int(data[0])
+# for i in range(1, len(data)):
+#     num = int(data[i])
+#     if num <= 1 or result <= 1:
+#         result = result + num
+#     else:
+#         result = result * num
+# print(result)
+
+# 모험가 공포도
+# n= input()
+# num_of_people =sort(input().split)
+# # 각 숫자를 문자열로 바꿔주는 것
+# result = 0
+# for i in range(1, len(data)):
+#     num = int(num_of_people[i])
+#     if num[i] > num[i+1]:
+#  #       select num less than highest one
+#         count += 1
+#     else:
+#         count +=1
+#         result = result * num
+# print(result)
+
+# 모험가 길드 문제 풀이
+- 오름차순으로 저렬해서 항상 최소한의 모함가의 수만 포함해서 그룹을 결성하면 됨
+n = int(input())  # 3
+data = list(map(int, input().split()))  # 1 2 2
+data = data.sort()
+result = 0  총 그룹 수
+count = 0  그룹에 포함된 모험가의 수
+
+for i in data:
+    공포도가 낮은 것부터 하나씩 확인
+    count = count + 1 현재 그룹에 해당 모험가를 포함시키기
+    if result >= i:
+        현재 그룹에 포함된 모험가의 수가 공포도 이상이면 그룹 결성
+        result = result + 1 총 그룹의 수 증가시키기
+        count = 0 현재 그룹에 포함된 모험가의 수 초기화
+print(result) 총 그룹의 수 출력
