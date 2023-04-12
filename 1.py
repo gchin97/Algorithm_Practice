@@ -132,18 +132,34 @@
 # print(result)
 
 # 모험가 길드 문제 풀이
-- 오름차순으로 저렬해서 항상 최소한의 모함가의 수만 포함해서 그룹을 결성하면 됨
-n = int(input())  # 3
-data = list(map(int, input().split()))  # 1 2 2
-data = data.sort()
-result = 0  총 그룹 수
-count = 0  그룹에 포함된 모험가의 수
+# - 오름차순으로 저렬해서 항상 최소한의 모함가의 수만 포함해서 그룹을 결성하면 됨
+# n = int(input())  # 3
+# data = list(map(int, input().split()))  # 1 2 2
+# data = data.sort()
+# result = 0  총 그룹 수
+# count = 0  그룹에 포함된 모험가의 수
 
-for i in data:
-    공포도가 낮은 것부터 하나씩 확인
-    count = count + 1 현재 그룹에 해당 모험가를 포함시키기
-    if result >= i:
-        현재 그룹에 포함된 모험가의 수가 공포도 이상이면 그룹 결성
-        result = result + 1 총 그룹의 수 증가시키기
-        count = 0 현재 그룹에 포함된 모험가의 수 초기화
-print(result) 총 그룹의 수 출력
+# for i in data:
+#     공포도가 낮은 것부터 하나씩 확인
+#     count = count + 1 현재 그룹에 해당 모험가를 포함시키기
+#     if result >= i:
+#         현재 그룹에 포함된 모험가의 수가 공포도 이상이면 그룹 결성
+#         result = result + 1 총 그룹의 수 증가시키기
+#         count = 0 현재 그룹에 포함된 모험가의 수 초기화
+# print(result) 총 그룹의 수 출력
+
+n = int(input())  # 5
+plans = input().split()  # R R R U D
+x, y = 1, 1
+
+dx = [0, 0, 1, -1]
+dy = [-1, 1, 0, 0,]
+move_types = ['L', 'R', 'U', 'D']
+for plan in plans:
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+    x, y = nx, ny
+print(x, y)
