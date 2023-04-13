@@ -174,32 +174,45 @@
 #                 count = count+1
 # print(count)
 
-#시뮬레이션 완전탐색 구현 유형
-input_data= input() #a1 -> 2
-row = int(input_data[1])
-column = int(ord(input_data[0]))- int(ord('a')) + 1 
+# #시뮬레이션 완전탐색 구현 유형
+# input_data= input() #a1 -> 2
+# row = int(input_data[1])
+# column = int(ord(input_data[0]))- int(ord('a')) + 1
 
-steps = [(-2,-1),(-1,-2),(1,-2),(2,-1),(2,1),(1,2),(-1,2),(-2,1)]
-result = 0
-for step in steps:
-    next_row = row + step[0]
-    next_column = column + step[1]
-    if next_row >=1 or next_row <=8 or next_column >=1 or next_column <=8:
-        result = result + 1
-print(result)
+# steps = [(-2,-1),(-1,-2),(1,-2),(2,-1),(2,1),(1,2),(-1,2),(-2,1)]
+# result = 0
+# for step in steps:
+#     next_row = row + step[0]
+#     next_column = column + step[1]
+#     if next_row >=1 or next_row <=8 or next_column >=1 or next_column <=8:
+#         result = result + 1
+# print(result)
 
-#6. 그리디- 시뮬레이션  
-data = input()
-result = []
-value = 0
+# #6. 그리디- 시뮬레이션
+# data = input()
+# result = []
+# value = 0
 
-for x in data:
-    if x.isalpha():
-        result.append(x)
-    else:
-        value = value + int(x)
-result.sort()
-if value != 0:
-    result.append(str(value))
+# for x in data:
+#     if x.isalpha():
+#         result.append(x)
+#     else:
+#         value = value + int(x)
+# result.sort()
+# if value != 0:
+#     result.append(str(value))
 
-print(''.join(result))
+# print(''.join(result))
+
+
+# DFS & BFS
+
+from collections import deque
+
+queue = deque()
+
+queue.append(5)
+queue.append(2)
+queue.popleft()
+print(queue)
+queue.reverse()
