@@ -231,6 +231,9 @@
 #         gcb(a,a%b)
 
 # 가장 인접해 있는 노드에서 가장 숫자가 적은 것을 선택하는 방식  v= starting point
+from collections import deque
+
+
 def dfs(graph, v, visited):
     visited[v] = True
     print(v, end='')
@@ -253,3 +256,89 @@ graph = [
 visited = [False] * 9
 
 dfs(graph, 1, visited)
+
+
+def bfs(graph, start, visited):
+    queue = deque[start]
+    visited[start] = True
+    while queue:
+        v = queue.popleft()
+        print(v, end='')
+
+        for i in graph[i]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
+
+
+n, m = map(int, input().split())
+
+graph = []
+
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+result = 0
+for i in range(n):
+    for j in range(m):
+        if dfs(i, j) == True:
+            result = result + 1
+print(result)
+
+
+def dfs(x, y):
+    if x <= -1 or x >= n or y <= -1 or y >= m:
+        return False
+    queue = deque([start])
+    visited[start] = True
+    count += 1
+    for i in range(N+1):
+        if visited[i] != 0:
+            bfs(graph, i, visited)
+
+
+print(count)
+
+
+n, m = map(int, input().split())
+
+graph = []
+
+for i in range(n):
+    graph.append(list(map(int, input())))
+
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+print(bfs(0, 0))
+
+
+def bfs(x, y):
+    queue = deque()
+    queue.append((x, y))
+    while queue:
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx < 0 or nx > n or ny < 0 or ny > m:
+                continue
+            if graph[nx][ny] == 0:
+                continue
+            if graph[nx][ny] == 1:
+                graph[nx][ny] = graph[x][y]+1
+                queue.append((nx, ny))
+    return (graph[n-1][m-1])
+
+
+money = int(input())
+count = int(input())
+price = int(input())
+result = int(input())
+
+
+def solution(money, count, price, result):
+    count += 1
+    price = price * count
+    if price > money:
+        return money - price
+    if price < money:
+        return 0
