@@ -205,14 +205,51 @@
 # print(''.join(result))
 
 
-# DFS & BFS
+# # DFS & BFS
 
-from collections import deque
+# from collections import deque
 
-queue = deque()
+# queue = deque()
 
-queue.append(5)
-queue.append(2)
-queue.popleft()
-print(queue)
-queue.reverse()
+# queue.append(5)
+# queue.append(2)
+# queue.popleft()
+# print(queue)
+# queue.reverse()
+
+# def factorial(n):
+#     result = 1
+#     for i in range(n+1):
+#         result = result * i
+#     return result
+
+# #유클리드 호제법
+# def gcb(a,b):
+#     if a%b == 0:
+#         return b
+#     else:
+#         gcb(a,a%b)
+
+# 가장 인접해 있는 노드에서 가장 숫자가 적은 것을 선택하는 방식  v= starting point
+def dfs(graph, v, visited):
+    visited[v] = True
+    print(v, end='')
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+
+graph = [
+    [],
+    [2, 3, 8]
+    [1, 4, 5]
+    [3, 5]
+    [3, 4]
+    [7]
+    [2, 6, 8]
+    [1, 7]
+]
+# 방문처리를 위해서 하나의 리스트를 만듦 모든 노드를 하나도 방문하지 않은 것으로 만들어야 함 인덱스 0은 사용하지 않도록 하나 더 큰 크기로 9 만듦
+visited = [False] * 9
+
+dfs(graph, 1, visited)
