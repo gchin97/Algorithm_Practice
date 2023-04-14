@@ -132,3 +132,4 @@ for i in number:
             else:
                 count += 1
     print(count)
+print(count)
