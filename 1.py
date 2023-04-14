@@ -335,10 +335,34 @@ price = int(input())
 result = int(input())
 
 
-def solution(money, count, price, result):
-    count += 1
-    price = price * count
-    if price > money:
-        return money - price
-    if price < money:
-        return 0
+def solution(money, count, price):
+    answer = -1
+    cost = 0
+    for i in range(1, count+1):
+        cost = price * i
+        if cost <= money:
+            return 0
+        else:
+            answer = cost - money
+    return answer
+
+
+def solution(price, money, count):
+    answer = -1
+    count = 0
+    for i in range(1, count+1):
+        cost = cost + price * i
+        if money <= cost:
+            return answer = cost - money
+        else:
+            return 0
+
+
+def solution(price, money, count):
+    answer = 0
+    for i in range(1, count+1):
+        answer = answer + price * i
+        if answer >= money:
+            return answer - money
+        else:
+            return 0
