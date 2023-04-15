@@ -133,3 +133,57 @@ for i in number:
                 count += 1
     print(count)
 print(count)
+
+
+n = int(input())
+array = [500, 100, 50, 10]
+
+price = int(input())
+count = 0
+
+for i in array:
+    count = count + price//i
+    price = price % i
+
+
+n, k = map(int, input().split())
+result = 0
+
+while True:
+    target = (n//k)*k
+    result = result + (n-target)
+    n = target
+    if n < k:
+        break
+    result = result+1
+
+result = result + (n-1)
+print(Result)
+
+data = input()
+result = int(data[0])
+
+for i in range(1, len(data)):
+    num = int(data[i])
+    if num <= 1 or result <= 1:
+        result = num + result
+    else:
+        result = result * num
+print(result)
+
+n = int(input())
+data = list(map(int, input().split()))
+data.sort()
+
+result = 0
+count = 0
+
+for i in data:
+    count = count + 1
+    if count = >i:
+        result = result + 1
+        count = 0
+print(result)
+
+
+for i
