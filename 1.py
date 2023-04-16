@@ -119,6 +119,7 @@
 # 모험가 공포도
 # 5
 
+from collections import deque
 n = int(input())
 number = list(map(int, input().split()))
 for i in number:
@@ -187,3 +188,52 @@ print(result)
 
 
 for i
+
+n = int(input())
+x, y = 1, 1
+plans = input().split()
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+
+for plan in plans:
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+if nx < 1 or ny < 1 or nx > n or ny > n:
+    continue
+x, y = dx, dy
+
+for i in range(h+1):
+    for j in range():
+        count = count + 1
+
+        int(ord(input[0])) + int(ord('a')) + 1
+
+data = input()
+result = []
+value = 0
+
+for x in data:
+    if x.isapha():
+        result.append(x)
+    else:
+        value = value + int(X)\
+            result.sort()
+if value != 0:
+    result.append(str(value))
+
+print('', join(result))
+
+
+def bfs(graph, start, visited):
+    queue = deque[start]
+    visited[start] = True
+    while True:
+        v = queue.popleft()
+        print(v, end='')
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i):
+                    visited[i] = True
+                    visited = True
