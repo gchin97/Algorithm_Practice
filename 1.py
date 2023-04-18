@@ -239,4 +239,4 @@ def bfs(graph, start, visited):
                     visited = True
 
 
-for true
+for true visited[i] = True
